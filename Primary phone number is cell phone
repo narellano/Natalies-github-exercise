@@ -1,0 +1,5 @@
+SELECT state_code, us_cong_district_latest, COUNT (Distinct primary_phone_number) as Number_of_Primary_Cell_Phones
+FROM analytics.person
+WHERE primary_phone_connection='C' and us_cong_district_latest !='null'and is_deceased !='true'
+GROUP BY 1,2
+ORDER BY 1,2;
